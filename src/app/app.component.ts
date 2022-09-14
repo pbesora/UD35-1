@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'UD35-1';
+
+
+  clients = [{nombre:'Cliente 1', cif:'B 123', direc:'C/ la la la', grupo:1}];
+
+  uploadClients(nombre:any, cif:any, direc:any, grupo:any){
+    this.clients.push({nombre:nombre, cif:cif, direc:direc, grupo:grupo});
+  }
 }
